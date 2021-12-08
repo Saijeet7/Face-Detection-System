@@ -9,8 +9,12 @@ grayscaled_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 #Detect Faces
 face_coordinates = trained_face_data.detectMultiScale(grayscaled_img)
 
+#Draw rectangles around the Face
+(x,y,w,h) = face_coordinates[0]
+cv2.rectangle(img,(x,y),(x+w,y+h),(255, 255, 0),7)
+#print(face_coordinates)
 
 
-cv2.imshow('Face detection',grayscaled_img)
+cv2.imshow('Face detection',img)
 cv2.waitKey()
 print("Code completed")
