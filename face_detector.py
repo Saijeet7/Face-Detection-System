@@ -20,7 +20,14 @@ while True:
         cv2.rectangle(frame,(x,y),(x+w,y+h),(randrange(256), randrange(256), randrange(256)),3)
 
     cv2.imshow('Face detection',frame)
-    cv2.waitKey(1)
+    key = cv2.waitKey(1)
+
+    #Press Q for quit
+    if key ==81 or key==113:
+        break
+
+webcam.release()
+
 
 
 #Detect Faces
